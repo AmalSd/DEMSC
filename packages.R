@@ -1,5 +1,4 @@
 
-#packages + data upload
 
 
 library(otrimle)
@@ -46,34 +45,11 @@ library(kernlab)
 ## add ncomp to predict
 library(pls)
 
+library(opera)
 
+
+library(Cubist)
+
+
+library(glmnet)
 #####
-
-#CONSTRUCT A SLIDING WINDOW ENSEMBLE
-
-
-data=data('ice.river')
-
-
-plot(prec)
-
-
-fj=data.frame(flow.vat)
-
-#data emnedding preparation
-
-
-dataset=data_lag_prep(fj,1,5)
-
-
-
-train.ts=data.frame(dataset[1:815,1])
-test.ts=data.frame(dataset[816:1091,1])
-
-names(train.ts)=names(test.ts)="target"
-
-train.reg=dataset[1:815,]
-test.reg=dataset[816:1091,]
-
-
-

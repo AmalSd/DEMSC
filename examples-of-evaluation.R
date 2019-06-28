@@ -1,28 +1,10 @@
 
 
-
-# A Drift-based Dynamic Ensemble Members Selection using Clustering For Time Series Forecasting
-
-##Description: 
-This package enables a dynamic selection of heteregeneous ensemble base models through a 
-performance drift detection mechanism and ensures ensemble diversity through a second stage 
-selection using clustering that is computed after each drift detection. 
-Predictions of final selected models are combined single prediction using sliding-window averages or
-stacking. 
-
-
-
-## Illustrative examples
-
-```
-
-
-
-
-
-path= 
 #specify path where you have placed the scripts 'packages.R', "functions.R","data-preparation.R" and 
 #the dataset example
+
+
+path= '/Users/saadalla/Desktop/'
 
 setwd(path)
 
@@ -30,6 +12,9 @@ setwd(path)
 source("packages.R")
 source("functions.R")
 source("data-preparation.R")
+
+
+
 
 
 # example of evaluation
@@ -55,6 +40,8 @@ sapply(1:ncol(predictions.table), function(x) rmse(predictions.table[,1],predict
 
 
 
+
+
 #######compute the drift top best performing base models using the sliding window validation set  of models predictions and the target time series
 
 tp1=15 #number of top models
@@ -66,6 +53,13 @@ updated_selection=topk.model.sel(models,data.train, data.test,val.length, formul
 updated_selection1=updated_selection$models.sel 
 #identify instant where the drift alarm was triggered
 alarm=updated_selection$alarm
+
+
+
+
+
+
+
 
 
 
@@ -110,10 +104,11 @@ pred.top.imlec.st=pred.st.cl[[10]]
 
 rmse(data.test$target,pred.top.imlec.st)
 
-```
 
-## Contact
 
-Any bug report or suggestion please contact me at amal.saadallah@cs.tu-dortmund.de.
 
-If you use our method, please cite the paper "A Drift-based  Dynamic Ensemble Members Selection using Clustering for Time Series Forecasting" (ECML2019)
+
+
+
+
+
