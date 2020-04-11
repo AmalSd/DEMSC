@@ -3,7 +3,7 @@
 
 # A Drift-based Dynamic Ensemble Members Selection using Clustering For Time Series Forecasting
 
-##Description: 
+## Description: 
 This package enables a dynamic selection of heteregeneous ensemble base models through a 
 performance drift detection mechanism and ensures ensemble diversity through a second stage 
 selection using clustering that is computed after each drift detection. 
